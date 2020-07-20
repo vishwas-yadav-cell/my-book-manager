@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+  <title>My Book Manager</title>
+  <style>
+    body,
+    tr,
+    td {
+      color: white;
+      font-family: 'Sora', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <h1>
+      <i class="fa fa-book-open text-primary"></i> My
+      <span class="text-warning">Book</span> Manager
+    </h1>
+    <form id="book-form">
+      <div class="form-group">
+        <label class="text-primary" for="title">TITLE :</label>
+        <input type="text" class="form-control" id="title" placeholder="Enter The Title" />
+      </div>
+      <div class="form-group">
+        <label class="text-primary" for="author">AUTHOR :</label>
+        <input type="text" class="form-control" id="author" placeholder="Enter The Author" />
+      </div>
+      <div class="form-group">
+        <label class="text-primary" for="isbn">ISBN :</label>
+        <input type="text" class="form-control" id="isbn" placeholder="Enter The ISBN" />
+      </div>
+      <input type="submit" id="Abtn" class="btn btn-primary btn-block" value="Add" />
+      <input type="submit" id="Ubtn" style="display: none;" class="btn btn-outline-warning btn-block" value="Update" />
+    </form>
+
+    <table class="table table-striped mt-5">
+      <thead style="display:none">
+        <tr class="text-primary">
+          <th>TITLE</th>
+          <th>AUTHOR</th>
+          <th>ISBN</th>
+        </tr>
+      </thead>
+      <tbody id="book-list">
+
+      </tbody>
+    </table>
+
+  </div>
+
+  <script src="app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
