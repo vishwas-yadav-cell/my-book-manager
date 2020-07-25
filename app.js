@@ -64,18 +64,28 @@ class ui {
             if (title.value === "" || author.value === "") {
               ui.showalerts("fillup all the fields", "danger")
             } else {
-              book.title = title.value;
-              book.author = author.value;
-              isbn.removeAttribute("disabled");
-              localStorage.setItem("books", JSON.stringify(books));
-              document.querySelector("#Abtn").setAttribute("style", "display:block;");
-              document.querySelector("#Ubtn").setAttribute("style", "display:none;");
-              ui.showalerts("book updated succesfully", "success");
+
+              (() => {
+                for (let i = 0; i < document.getElementById("mytable").rows.length; i++) {
+                  if (document.getElementById("mytable").rows[i].cells[2].innerText === isbn.value) {
+                    document.getElementById("mytable").rows[i].cells[2].previousElementSibling.previousElementSibling.innerText = title.value;
+                    document.getElementById("mytable").rows[i].cells[2].previousElementSibling.innerText = author.value;
+
+                    book.title = title.value;
+                    book.author = author.value;
+
+                    isbn.removeAttribute("disabled");
+                    localStorage.setItem("books", JSON.stringify(books));
+                    document.querySelector("#Abtn").setAttribute("style", "display:block;");
+                    document.querySelector("#Ubtn").setAttribute("style", "display:none;");
+                    ui.showalerts("book updated succesfully", "success");
+                  }
+                }
+              })();
               ui.clearfield();
             }
           });
         }
-
       });
     }
   }
